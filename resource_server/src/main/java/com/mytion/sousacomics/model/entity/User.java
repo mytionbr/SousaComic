@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Type;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -30,6 +32,7 @@ public class User {
 	private String city;
 	private String state;
 	private String zip;
+	@Type(type = "timestamp")
 	private Date registrationDate;
 	
 }
