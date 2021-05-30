@@ -26,7 +26,7 @@ public class Book {
 	private String author;
 	private String image;
 	private Float price;
-	private String desc;
+	private String description;
 	@Column(insertable= false)
 	private Date dateCreated;
 	@Type(type="timestamp")
