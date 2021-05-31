@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -30,11 +32,10 @@ public class UserController {
 	
 	private final UserService userService;
 	
-	
-	
+		
 	@GetMapping()
-	public ResponseEntity<List<User>> getAll(){
-		return new ResponseEntity<>(userService.getAll(),HttpStatus.OK);
+	public ResponseEntity<Page<User>> getAll(Pageable pageable){
+		return new ResponseEntity<>(userService.getAll(pageable),HttpStatus.OK);
 	}
 	
 	@GetMapping(path = "/{id}")
