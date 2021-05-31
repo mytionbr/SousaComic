@@ -20,27 +20,6 @@ public class UserServiceTest {
 	@Mock
 	private UserRepository repository;
 	
-	@Test
-	void it_should_register_a_user() {
-		User user = new User();
-		user.setFirstName("Fulano");
-		user.setLastName("de tal");
-		user.setAddress("rua de tal");
-		user.setCity("São Paulo");
-		user.setCountry("Brasil");
-		user.setEmail("fulano@gmail.com");
-		user.setPassword("12345");
-		user.setPhone("1111111111");
-		user.setState("São Paulo");
-		user.setZip("121212121");
-
-		// when
-		User userData = userService.register(user);
-
-		System.out.println(userData.getCity());
-		// then
-		then(user).isEqualTo(userData);
-
-	}
+	
 
 }

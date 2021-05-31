@@ -5,7 +5,9 @@ import java.util.Date;
 import org.hibernate.annotations.Type;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
 @Data
 public class UserPostRequestBody {
 	private String email;
