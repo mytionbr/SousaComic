@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mytion.sousacomics.model.entity.User;
@@ -39,6 +40,11 @@ public class UserController {
 		return new ResponseEntity<>(userService.findById(id),HttpStatus.OK);
 	}
 	
+	@GetMapping(path = "/find")
+	public ResponseEntity<List<User>> findByFistName(@RequestParam String firstName){
+		return new ResponseEntity<>(userService.findByFirstName(firstName),HttpStatus.OK);
+	}	
+	
 	@PostMapping
 	public ResponseEntity<User> register (@RequestBody UserPostRequestBody userPostRequestBody){
 		return new ResponseEntity<>(userService.register(userPostRequestBody),HttpStatus.CREATED);
@@ -56,6 +62,7 @@ public class UserController {
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
 	
+
 	
 	
 }

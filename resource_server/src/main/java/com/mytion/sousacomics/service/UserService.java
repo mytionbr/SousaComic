@@ -6,6 +6,8 @@ import com.mytion.sousacomics.model.entity.User;
 import com.mytion.sousacomics.model.request.UserPostRequestBody;
 import com.mytion.sousacomics.model.request.UserPutRequestBody;
 
+
+
 public interface UserService {
 	
 	User register(UserPostRequestBody userPostRequestBody);
@@ -17,4 +19,8 @@ public interface UserService {
 	void delete(Long id);
 
 	void replace(UserPutRequestBody userPutRequestBody);
+	
+	List<User> findByFirstName(String firstName);
+	
+
 }

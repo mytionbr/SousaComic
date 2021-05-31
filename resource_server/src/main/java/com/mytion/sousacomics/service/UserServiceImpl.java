@@ -51,6 +51,15 @@ public class UserServiceImpl implements UserService{
 		userRepository.save(findById(user.getId()));
 		
 	}
+
+	@Override
+	public List<User> findByFirstName(String firstName) {
+		return userRepository.findByFirstName(firstName);
+	}
+
+
+
+
 	
 	
 	
