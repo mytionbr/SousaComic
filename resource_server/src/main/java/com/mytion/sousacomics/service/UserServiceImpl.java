@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.mytion.sousacomics.dao.UserRepository;
+import com.mytion.sousacomics.exception.BadRequestException;
 import com.mytion.sousacomics.mapper.UserMapper;
 import com.mytion.sousacomics.model.entity.User;
 import com.mytion.sousacomics.model.request.UserPostRequestBody;
@@ -37,7 +38,7 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public User findById(Long id) {
 		return userRepository.findById(id)
-		 	.orElseThrow(()-> new ResponseStatusException(HttpStatus.BAD_REQUEST,"User not Found"));
+		 	.orElseThrow(()-> new BadRequestException("User not Found"));
 	}
 
 	@Override
