@@ -2,6 +2,8 @@ package com.mytion.sousacomics.api;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -46,7 +48,7 @@ public class UserController {
 	}	
 	
 	@PostMapping
-	public ResponseEntity<User> register (@RequestBody UserPostRequestBody userPostRequestBody){
+	public ResponseEntity<User> register (@RequestBody @Valid UserPostRequestBody userPostRequestBody){
 		return new ResponseEntity<>(userService.register(userPostRequestBody),HttpStatus.CREATED);
 	}
 	
