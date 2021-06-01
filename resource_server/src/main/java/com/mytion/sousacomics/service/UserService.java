@@ -8,6 +8,7 @@ import org.springframework.data.domain.Pageable;
 import com.mytion.sousacomics.model.entity.User;
 import com.mytion.sousacomics.model.request.UserPostRequestBody;
 import com.mytion.sousacomics.model.request.UserPutRequestBody;
+import com.mytion.sousacomics.model.response.UserResponseBody;
 
 
 
@@ -23,7 +24,8 @@ public interface UserService {
 
 	void replace(UserPutRequestBody userPutRequestBody);
 	
-	List<User> findByFirstName(String firstName);
+	List<UserResponseBody> findByFirstName(String firstName);
+	
 	
 
 }

@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.mytion.sousacomics.model.entity.User;
 import com.mytion.sousacomics.model.request.UserPostRequestBody;
 import com.mytion.sousacomics.model.request.UserPutRequestBody;
+import com.mytion.sousacomics.model.response.UserResponseBody;
 import com.mytion.sousacomics.service.UserService;
 
 import lombok.RequiredArgsConstructor;
@@ -44,7 +45,7 @@ public class UserController {
 	}
 	
 	@GetMapping(path = "/find")
-	public ResponseEntity<List<User>> findByFistName(@RequestParam String firstName){
+	public ResponseEntity<List<UserResponseBody>> findByFistName(@RequestParam String firstName){
 		return new ResponseEntity<>(userService.findByFirstName(firstName),HttpStatus.OK);
 	}	
 	
