@@ -2,6 +2,7 @@ package com.mytion.sousacomics.model.request;
 
 import java.util.Date;
 
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
@@ -17,7 +18,8 @@ public class UserPostRequestBody {
 	@NotNull(message = "The user email cannot be null")
 	private String email;
 	@NotEmpty(message = "The user password cannot be empty")
-	@NotNull(message = "The user password cannot be null") 
+	@NotNull(message = "The user password cannot be null")
+	@Min(value=5,message="The length of the user password must be at least 5 characters")
 	private String password;
 	private String firstName;
 	private String lastName;
