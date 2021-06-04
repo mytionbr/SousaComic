@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 import com.mytion.sousacomics.model.entity.BookCategory;
 
@@ -19,7 +20,7 @@ public class BookPostRequestBody {
 	private String author;
 	@NotBlank(message="Book image url cannot be empty or null")
 	private String image;
-	@NotBlank(message="Book price cannot be empty or null")
+	@NotNull(message="Book price cannot be empty or null")
 	private Float price;
 	private String description;
 	private Integer stock;
