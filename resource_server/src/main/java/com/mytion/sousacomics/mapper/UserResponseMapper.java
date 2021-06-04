@@ -1,4 +1,4 @@
-package com.mytion.sousacomics.mapper.user;
+package com.mytion.sousacomics.mapper;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;

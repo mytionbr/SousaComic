@@ -6,8 +6,6 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
-import org.hibernate.annotations.Type;
-
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

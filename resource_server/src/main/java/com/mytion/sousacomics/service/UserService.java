@@ -10,8 +10,6 @@ import com.mytion.sousacomics.model.request.UserPostRequestBody;
 import com.mytion.sousacomics.model.request.UserPutRequestBody;
 import com.mytion.sousacomics.model.response.UserResponseBody;
 
-
-
 public interface UserService {
 	
 	User register(UserPostRequestBody userPostRequestBody);

@@ -1,6 +1,7 @@
 package com.mytion.sousacomics.service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +12,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.mytion.sousacomics.dao.UserRepository;
 import com.mytion.sousacomics.exception.BadRequestException;
-import com.mytion.sousacomics.mapper.user.UserRequestMapper;
-import com.mytion.sousacomics.mapper.user.UserResponseMapper;
+import com.mytion.sousacomics.mapper.UserRequestMapper;
+import com.mytion.sousacomics.mapper.UserResponseMapper;
 import com.mytion.sousacomics.model.entity.User;
 import com.mytion.sousacomics.model.request.UserPostRequestBody;
 import com.mytion.sousacomics.model.request.UserPutRequestBody;
@@ -32,6 +33,7 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public User register(UserPostRequestBody userPostRequestBody) {
 		User user = UserRequestMapper.INSTANCE.toUser(userPostRequestBody);
+		user.setRegistrationDate(new Date());
 		return userRepository.save(user);
 	}
 
